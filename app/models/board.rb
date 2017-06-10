@@ -1,6 +1,7 @@
 class Board < ActiveRecord::Base
   # Remember to create a migration!
-  # has many jobs
-  # has many users
+  has_many :jobs
+  has_many :users
+  belongs_to :category
   # belongs to group
 end
