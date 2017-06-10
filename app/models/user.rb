@@ -2,7 +2,8 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   # users.password_hash in the database is a :string
-  has_many :boards
+  has_many :subscriptions
+  has_many :boards, through: :subscriptions
   include BCrypt
 
   def password
@@ -14,3 +15,4 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 end
+#  subscriptions
