@@ -1,4 +1,4 @@
 class Job < ActiveRecord::Base
   # Remember to create a migration!
-  # belongs to a board
+  belongs_to :board
 end
