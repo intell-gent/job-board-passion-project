@@ -1,4 +1,4 @@
-# index
+# index .
 get "/" do
    @boards = Board.all
   erb :"index"
