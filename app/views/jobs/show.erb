@@ -1,1 +1,8 @@
-<h1>Show a Job</h1>
+<h1>Welcome to the <%= @job.title %>'s Job posting.</h1>
+<article class="job-container">
+  <h2 class='position'><strong>Position:</strong> <%= @job.position %></h2>
+  <h3>Description</h3>
+  <p>
+    <span class='description'><%= @job.description %></span>
+  </p>
+</article>

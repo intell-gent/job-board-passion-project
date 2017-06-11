@@ -1,0 +1,16 @@
+<div class="job-boards-container">
+<h1>Job Board</h1>
+
+<% @boards.each do |board| %>
+  <div class="board-container">
+    <article id="<%= board.id %>">
+      <h2 class="board-title" ><a href='/boards/<%= board.id %>'><%= board.title %></a></h2>
+      <p>
+        <span class='description'><%= board.description %></span>
+        <span class='category'><%= board.category %></span>
+      </p>
+    </article>
+  </div>
+<% end %>
+
+</div>
