@@ -1,1 +1,22 @@
-<h1>User Profile</h1>
+<h1>Welcome <%= @user.username %>!</h1>
+<form method='post' action='/sessions'>
+          <input type='hidden' name='_method' value='delete'>
+          <button type = 'submit'> Log out </button>
+        </form>
+<div class="job-boards-container">
+<h1>Subscriptions</h1>
+
+<% @user.boards.each do |board| %>
+  <div class="board-container">
+    <article id="<%= board.id %>">
+      <h2 class="board-title" ><a href='/boards/<%= board.id %>'><%= board.title %></a></h2>
+      <h3 class="board-categroy" >Category: <%= board.category.name %></h3>
+      <p> Description:
+        <span class='description'><%= board.description %></span>
+      </p>
+    </article>
+  </div>
+<% end %>
+
+</div>
+

@@ -1,1 +1,22 @@
-<h1>Create new Job</h1>
+<article class="new-job">
+    <h3>Create a job.</h3>
+    <form method="post" action="/jobs">
+      <label><b>Title: </b></label>
+      <input type="text" placeholder="Title" name="job[title]" required>
+      <br />
+      <label><b>Position: </b></label>
+      <input type="text" placeholder="Position" name="job[position]" required>
+      <br />
+      <label><p>Description: </p></label>
+      <textarea name="job[description]">
+      Roles
+        * test
+      Qualifications
+        * test
+      </textarea>
+      <br />
+      <input type="hidden" placeholder="description" name="job[board_id]" value="<%= @board.id %>">
+      <br />
+      <button type="submit" class="create-job">Create Job</button>
+    </form>
+</article>
