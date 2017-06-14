@@ -5,9 +5,9 @@
   <div class="board-container">
     <article id="<%= board.id %>">
       <h2 class="board-title" ><a href='/boards/<%= board.id %>'><%= board.title %></a></h2>
-      <p>
+      <h3 class="board-categroy" >Category: <%= board.category.name %></h3>
+      <p> Description:
         <span class='description'><%= board.description %></span>
-        <span class='category'><%= board.category %></span>
       </p>
     </article>
   </div>

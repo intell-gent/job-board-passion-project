@@ -9,7 +9,7 @@ post '/jobs' do
   @job = Job.new(params[:job])
 
   if @job.save
-    redirect "/boards/#{@board.id}"
+    redirect "/boards/#{@job.board_id}"
   else
     erb :'jobs/new'
   end

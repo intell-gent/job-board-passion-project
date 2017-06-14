@@ -15,9 +15,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>The Boardroom</title>
 </head>
 <body>
+  <h1>🏢 Welcome to The Boardroom 🏢</h1>
+  <nav class="top-nav">
+  👉 <a href="/">Home</a> 👀
+  <% if session[:id] != nil %>
+    <a href="/users/<%=session[:id]%>">Profile</a>
+    <form method='post' action='/sessions'>
+          <input type='hidden' name='_method' value='delete'>
+          <button class="log-out-btn" type='submit'> Log out </button>
+    </form>
+  <% else %>
+  <a href="../sessions/new">Login</a> 👀
+  <a href="../users/new">Register</a> 👈
+  <% end %>
+  </nav>
   <%= yield %>
 </body>
 </html>
