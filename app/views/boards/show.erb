@@ -3,10 +3,12 @@
   <article id="<%= @board.id %>">
     <h2 class='description'><%= @board.description %></h2>
     <ul class="board-jobs">
-    <span class='category'>Category: <%= @board.category.name %></span>
+    <span class='category'>Category: <a href="/categories/<%= @board.category.id %>"><%= @board.category.name %></a></span>
     <h3>this board has <%= @board.jobs.count %> jobs.
     </h3>
-      <a class="create-job-link" href="../jobs/<%= @board.id %>/new">Create Job for <%= @board.title %>.</a>
+      <% if logged_in? %>
+        <a class="create-job-link" href="../jobs/<%= @board.id %>/new">Create Job for <%= @board.title %>.</a>
+      <% end %>
       <% @board.jobs.each do |job| %>
         <li id="<%= job.id %>">
             <span class='title'><strong>Title:</strong><a href="../jobs/<%=job.id%>"><%= job.title %></a></span> <br />

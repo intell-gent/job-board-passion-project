@@ -4,6 +4,7 @@ class CreateJobs < ActiveRecord::Migration
         t.string :title
         t.string :position
         t.string :description
+        t.integer :jobposting_id
         t.references :board
 
         t.timestamps

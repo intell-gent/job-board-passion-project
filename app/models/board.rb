@@ -4,5 +4,6 @@ class Board < ActiveRecord::Base
   has_many :subscriptions
   has_many :users, through: :subscriptions
   belongs_to :category
+  belongs_to :hosting
   # belongs to group
 end

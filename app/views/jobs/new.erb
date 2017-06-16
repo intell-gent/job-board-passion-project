@@ -15,7 +15,9 @@
         * test
       </textarea>
       <br />
-      <input type="hidden" placeholder="description" name="job[board_id]" value="<%= @board.id %>">
+      <input type="hidden"  name="job[board_id]" value="<%= @board.id %>">
+      <br />
+      <input type="hidden" name="job[jobposting_id]" value="<%= session[:id]%>">
       <br />
       <button type="submit" class="create-job">Create Job</button>
     </form>

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   # users.password_hash in the database is a :string
   has_many :subscriptions
   has_many :boards, through: :subscriptions
+  has_many :jobpostings
+  has_many :hostings
   include BCrypt
 
   def password
