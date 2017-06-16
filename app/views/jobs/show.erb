@@ -6,3 +6,18 @@
     <span class='description'><%= @job.description %></span>
   </p>
 </article>
+<form action="/mailgun/send" method="post">
+  <input type="hidden" name="email[to]" value="<%= ENV["MY_EMAIL"]%> ">
+  <br>
+  <input type="hidden" name="email[from]" value=" <%= ENV["MY_EMAIL"] %> ">
+  <br>
+  <label>Subject: </label>
+  <input type="text" name="email[subject]" placeholder="Subject line">
+  <br>
+  <label>Body: </label>
+  <textarea name="email[text]">
+    put your stuff here
+  </textarea>
+  <br>
+  <input type="submit" value="Send Email!">
+</form>

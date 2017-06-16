@@ -1,12 +1,12 @@
 require "faker"
 password = "passwordz"
 
-# 15.times do
-#   Category.create({name: Faker::Hipster.word})
-# end
-# 2.times do
-#   User.create({username: Faker::Internet.user_name, password: password})
-# end
+5.times do
+  Category.create({name: Faker::Hipster.word})
+end
+2.times do
+  User.create({username: Faker::Internet.user_name, password: password})
+end
 
 # 7.times do
 #   Board.create({title: Faker::Hipster.word, description: Faker::Hipster.sentence, category_id: Category.all.sample.id, hosting_id: User.all.sample.id })
