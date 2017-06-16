@@ -39,7 +39,7 @@ body {
     color: black;
     text-decoration: underline;
   }
-  .log-out-btn, .send-email, .subscribe-button {
+  .log-out-btn, .send-email, .subscribe-button, .create-board {
     border: 2px solid black;
     border-radius: 5px;
     color: white;
@@ -98,18 +98,15 @@ body {
     margin: 2.5% auto;
     padding: 3%;
   }
-  .job-container {
+  .job-container, .new-job, .new-job-board {
     display: inline-block;
     vertical-align: top;
 
     font-family: 'Spectral', serif; /*standard text*/
-
-
     background: url("../images/paper.jpg") no-repeat center center;
-    background-size: 100% 95%;
-    max-width: 100%;
-
-    margin: 2.5% auto;
+    background-size: 100% 100%;
+    width: 90%;
+    margin: 2.5%;
     padding: 3%;
   }
   .job, .board {
@@ -119,7 +116,8 @@ body {
     border-radius: 15px;
     background: rgba(25, 25, 25, 0.6);
     color: white;
-    max-width: 200px;
+    max-width: 175px;
+    height: 100%;
     padding: 20px;
     margin: 1%;
     list-style: none;
@@ -134,13 +132,3 @@ body {
     background: rgba(255, 255, 255, 0.6);
     padding: 1%;
   }
-
-
-
-
-
-
-
-
-
-
