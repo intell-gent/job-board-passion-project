@@ -3,6 +3,7 @@ class CreateBoards < ActiveRecord::Migration
     create_table :boards do |t|
         t.string :title
         t.string :description
+        t.integer :hosting_id
         t.references :category
 
         t.timestamps

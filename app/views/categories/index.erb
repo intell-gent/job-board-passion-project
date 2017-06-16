@@ -1,0 +1,13 @@
+<h1>Categories</h1>
+<form action="/categories" method="post">
+  <label>Category Name: </label>
+  <input type="text" name="category[name]">
+  <input type="submit" name="commit" value="Create Category!" />
+</form>
+<ul class="category-list" >
+<% @categories.each do |category| %>
+  <h3>Category ID: <%= category.id %> </h3>
+  <li>Category name: <a href="/categories/<%= category.id %>"><%= category.name %></a> </li>
+  <br>
+<% end %>
+</ul>
