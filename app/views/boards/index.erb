@@ -7,8 +7,8 @@
   <div class="board-container">
     <article id="<%= board.id %>">
       <h2 class="board-title" ><a href='/boards/<%= board.id %>'><%= board.title %></a></h2>
-      <h3 class="board-categroy" >Category: <%= board.category.name %></h3>
-      <p> Description:
+      <h3 class="board-categroy" >Category: <a href="/categories/ <%= board.category.id %> "><%= board.category.name %></a> </h3>
+      <p> <strong>Description:</strong>
         <span class='description'><%= board.description %></span>
       </p>
     </article>

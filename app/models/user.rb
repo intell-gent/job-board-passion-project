@@ -19,5 +19,6 @@ class User < ActiveRecord::Base
   def self.authenticate(password_hash, password)
     password_hash == password
   end
+
 end
-#  subscriptions
+#  subscription

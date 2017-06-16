@@ -4,6 +4,12 @@
     <h2 class='description'><%= @board.description %></h2>
     <ul class="board-jobs">
     <span class='category'>Category: <a href="/categories/<%= @board.category.id %>"><%= @board.category.name %></a></span>
+     <% if @board.subscribed?(session[:id]) %>
+             <%= erb :'_unsubscribe_button' , :layout => false, locals: {board: @board,  user: session[:id]}%>
+          <% else %>
+            <%= erb :'_subscribe_button' , :layout => false, locals: {board: @board,  user: session[:id]}%>
+          <% end %>
+        </li>
     <h3>this board has <%= @board.jobs.count %> jobs.
     </h3>
       <% if logged_in? %>
@@ -13,8 +19,8 @@
         <li id="<%= job.id %>">
             <span class='title'><strong>Title:</strong><a href="../jobs/<%=job.id%>"><%= job.title %></a></span> <br />
             <span class='position'><strong>Position:</strong> <%= job.position %></span><br />
-        </li>
         <br>
+
       <% end %>
     </ul >
   </article>
