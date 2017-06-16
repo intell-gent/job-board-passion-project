@@ -21,21 +21,12 @@
 <div class=".center">
   <h1>🏢 Welcome to The Boardroom 🏢</h1>
   <nav class="top-nav">
-  | <a href="/">Job Boards</a> |
-   <a href="/categories">Categories</a> |
-
-  <% if logged_in? %>
-    <a href="/users/<%=session[:id]%>">Profile</a> |
-    <form method='post' action='/sessions'>
-          <input type='hidden' name='_method' value='delete'>
-          <button class="log-out-btn" type='submit'> Log out </button>
-    </form>
-  <% else %>
-  <a href="../sessions/new">Login</a> 👀
-  <a href="../users/new">Register</a> 👈
-  <% end %>
+    <%= erb :'_nav_links' , :layout => false %>
   </nav>
   <%= yield %>
   </div>
+  <nav class="bottom-nav">
+    <%= erb :'_nav_links' , :layout => false %>
+  </nav>
 </body>
 </html>

@@ -1,11 +1,11 @@
 # index .
 get "/" do
    @boards = Board.all
-  erb :"index"
+  erb :"boards/index"
 end
 get "/boards" do
    @boards = Board.all
-  erb :"index"
+  erb :"boards/index"
 end
 # create
 get '/boards/new' do

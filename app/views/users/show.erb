@@ -4,7 +4,7 @@
           <button type = 'submit'> Log out </button>
         </form>
 <div class="job-boards-container">
-<h1>Subscriptions</h1>
+<h3>Subscriptions</h3>
 
 <% @user.boards.each do |board| %>
   <div class="board-container">
@@ -20,3 +20,36 @@
 
 </div>
 
+<div class="job-board-hostings">
+<h3>Hostings</h3>
+
+<% @user.hostings.each do |board| %>
+  <div class="board-container">
+    <article id="<%= board.id %>">
+      <h2 class="board-title" ><a href='/boards/<%= board.id %>'><%= board.title %></a></h2>
+      <h3 class="board-categroy" >Category: <%= board.category.name %></h3>
+      <p> Description:
+        <span class='description'><%= board.description %></span>
+      </p>
+    </article>
+  </div>
+<% end %>
+
+</div>
+
+
+<div class="job-postings">
+<h3>Job Postings</h3>
+
+<% @user.jobpostings.each do |job| %>
+  <div class="job-container">
+    <article id="<%= job.id %>">
+      <h4 class="job-title" ><a href='/jobs/<%= job.id %>'><%= job.title %></a></h4>
+      <p> Description:
+        <span class='description'><%= job.description %></span>
+      </p>
+    </article>
+  </div>
+<% end %>
+
+</div>

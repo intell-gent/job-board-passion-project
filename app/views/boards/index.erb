@@ -1,6 +1,8 @@
 <div class="job-boards-container">
-<h1>Job Board</h1>
-
+<h1>Job Boards</h1>
+<% if logged_in? %>
+  <a href="/boards/new">Create A board</a>
+<% end %>
 <% @boards.each do |board| %>
   <div class="board-container">
     <article id="<%= board.id %>">
