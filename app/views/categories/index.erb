@@ -4,10 +4,11 @@
   <input type="text" name="category[name]">
   <input type="submit" name="commit" value="Create Category!" />
 </form>
-<ul class="category-list" >
+<ul class="categories" >
 <% @categories.each do |category| %>
+  <div class="ul-container" >
   <h3>Category ID: <%= category.id %> </h3>
   <li>Category name: <a href="/categories/<%= category.id %>"><%= category.name %></a> </li>
-  <br>
+  </div>
 <% end %>
 </ul>

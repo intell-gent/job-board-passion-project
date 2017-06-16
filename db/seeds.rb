@@ -1,5 +1,4 @@
 require "faker"
-password = "passwordz"
 
 5.times do
   Category.create({name: Faker::Hipster.word})
@@ -13,6 +12,6 @@ end
 end
 
 
-15.times do
+10.times do
   Job.create({title: Faker::Hipster.word, position: Faker::Hipster.word, description: Faker::Hipster.paragraph, board_id: Board.all.sample.id, jobposting_id: User.all.sample.id })
 end
