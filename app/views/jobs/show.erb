@@ -11,7 +11,7 @@
 
 </article>
 <% if logged_in? %>
-  <form action="/mailgun/send" method="post">
+  <form class="mailgun-form" action="/mailgun/send" method="post">
     <h3>Send Email an to the Poster.</h3>
     <input type="hidden" name="email[to]" value="<%= @job.jobposting.email %> ">
 
