@@ -1,0 +1,20 @@
+<h1>Create new Job Board</h1>
+<article class="new-job-board">
+    <form method="post" action="/boards">
+      <label><b>Title: </b></label>
+      <input type="text" placeholder="Title" name="board[title]" required>
+      <br />
+      <label><b>Category: </b></label>
+      <input type="text" placeholder="Position" name="board[category_id]" required>
+      <br />
+      <label><p>Description: </p></label>
+      <textarea name="board[description]">
+        thoughts go here
+      </textarea>
+      <br />
+
+      <input type="hidden" name="board[hosting_id]" value="<%= session[:id]%>">
+      <br />
+      <button type="submit" class="create-board">Create Board</button>
+    </form>
+</article>

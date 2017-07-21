@@ -1,0 +1,13 @@
+<h1>welcome to <%= @category.name %>.</h1>
+
+<h2><%= @category.name %> Boards.</h2>
+<div class="categories">
+  <ul class="board-list">
+  <% @category.boards.each do |board| %>
+    <div class="board" >
+      <h3> <a href="/boards/<%= board.id %>"><%= board.title %></a> </h3>
+      <li> <%= board.description %> </li>
+    </div>
+  <% end %>
+  </ul>
+</div>

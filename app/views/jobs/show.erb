@@ -1,0 +1,34 @@
+<h1>Welcome to the <%= @job.title %>'s Job posting.</h1>
+
+<article class="job-container">
+
+  <h2 class='position'><strong>Position:</strong> <%= @job.position %></h2>
+
+  <h3>Description</h3>
+  <p>
+    <span class='description'><%= @job.description %></span>
+  </p>
+
+
+  <% if logged_in? %>
+    <form class="mailgun-form" action="/mailgun/send" method="post">
+      <h3>Send Email an to the Poster.</h3>
+      <input type="hidden" name="email[to]" value="<%= @job.jobposting.email %> ">
+
+      <input type="hidden" name="email[from]" value=" <%= User.find(session[:id]).email %> ">
+
+      <label>Subject: </label>
+      <input type="text" name="email[subject]" placeholder="Subject line">
+      <br>
+
+      <label>Body: </label>
+      <textarea name="email[text]">
+        put your stuff here
+      </textarea>
+      <br>
+
+      <input class="send-email" type="submit" value="Send Email!">
+    </form>
+
+  <% end %>
+</article>

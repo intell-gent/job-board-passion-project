@@ -11,8 +11,12 @@ gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
+gem 'bcrypt'
 
 gem 'shotgun', '~>0.9.1'
+gem 'mailgun-ruby', '~>1.1.6'
+gem 'dotenv'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'
